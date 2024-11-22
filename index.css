@@ -1,0 +1,168 @@
+@font-face {
+    font-family: Nebula;
+    src: url(Fonts/Nebula-Regular.otf);
+}
+
+@font-face {
+    font-family: Nebula_Hollow;
+    src: url(Fonts/Nebula-Hollow.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100svh;
+    overflow: hidden;
+}
+
+.left_panel, .right_panel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10dvw;
+    height: 80dvh;
+    border-top: .2rem solid #7197b6;
+    border-bottom: .2rem solid #7197b6;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: all .75s ease-in-out;
+
+    opacity: 0;
+}
+
+.left_panel {
+    border-radius: 0 4rem 4rem 0;
+    align-items: center;
+    flex-direction: column;
+    gap: 2dvw;
+    left: -10dvw;
+}
+
+.btns {
+    width: 6dvw;
+    height: 6dvw;
+    margin-left: -1dvw;
+    overflow: hidden;
+    border-left: .1rem solid #7bacd4;
+    border-right: .1rem solid #7bacd4;
+    border-radius: 50%;
+    transition: all .15s ease-in-out;
+}
+
+.btns img {
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+    scale: .9;
+}
+
+.btns:hover {
+    cursor: pointer;
+    border-left: .1rem solid #d9fff4;
+    border-right: .1rem solid #d9fff4;
+    box-shadow: 0 0 1dvw .05dvw #7bacd4 inset;
+}
+
+.right_panel {
+    right: -10dvw;
+    border-radius: 4rem 0 0 4rem;
+}
+
+.right_txt {
+    height: 73dvw;
+    margin-top: 100dvw;
+    margin-left: 2.75dvw;
+    position: absolute;
+    color: #badff1;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-family: Nebula_Hollow;
+    font-size: 6dvw;
+    font-weight: 500;
+
+    animation: to-top 30s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200dvw);
+    }
+}
+
+.container {
+    height: 90dvh;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    border: .1rem solid #7197b6;
+    box-shadow: 0 0 0 0 #7bacd4;
+    /* box-shadow: 0 0 5dvw .5dvw #7bacd4; */
+    transition: all .75s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotating 30s linear infinite;
+
+    scale: .75;
+    opacity: 0;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.text_group {
+    position: absolute;
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+
+    opacity: 0;
+    scale: .8;
+}
+
+.text_head {
+    color: rgb(255, 255, 255);
+    font-family: Nebula;
+    font-size: 9.5dvw;
+    text-align: center;
+    font-weight: bold;
+}
+
+.text_desc {
+    color: rgba(255, 255, 255, 0.418);
+    font-family: Nebula_Hollow;
+    font-size: 2.5dvw;
+    text-align: center;
+    font-weight: 100;
+    background: linear-gradient(0deg, #d9fff4, #2394d5, #2394d5, #d9fff4);
+    background-size: 100%;
+    background-clip: text;
+    -webkit-text-stroke: .5px transparent;
+    scale: .9;
+}

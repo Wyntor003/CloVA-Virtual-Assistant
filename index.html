@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloVA</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="Images/clova icon.png">
+    <script src="index.js"></script>
+    <script src="visualizer.js" type="module"></script>
+</head>
+<body>
+    <div class="temp" style="display: none;"></div>
+    <div class="temp2" style="display: none;"></div>
+    <audio class="voice_audio" style="display: none;"></audio>
+    <div class="left_panel">
+        <div class="btns power_btn" onclick="system_shutdown()">
+            <img src="Images/power.png" alt="power icon">
+        </div>
+        <div class="btns mic_btn" onclick="call_clova()">
+            <img src="Images/microphone.png" alt="Microphone icon">
+        </div>
+        <div class="btns mobile_btn">
+            <img src="Images/mobile.png" alt="Mobile icon">
+        </div>
+    </div>
+    <div class="container"></div>
+    <div class="text_group">
+        <h1 class="text_head">CloVA</h1>
+        <h3 class="text_desc">virtual personal assistant</h3>
+    </div>
+    <div class="right_panel">
+        <h2 class="right_txt">version alpha</h2>
+    </div>
+</body>
+</html>
