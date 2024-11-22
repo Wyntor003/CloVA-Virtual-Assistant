@@ -280,15 +280,15 @@ function speak(text) {
 }
 
 window.onload = function () {
-    //   sleep(50).then(() => {
-    //     var responses = JSON.parse(document.querySelector(".temp2").innerHTML);
-    //     speak(responses["greetings"][Math.floor(Math.random() * responses["greetings"].length)]);
-    //     document.querySelector(".voice_audio").play();
-    //     document.querySelector(".voice_audio").onended = () => {
-    //       recognition.start();
-    //     };
-    //   });
 
+    // if (window.confirm('Ok to Connect to Spotify, Cancel to Skip')) {
+    //     const authURL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${REDIRECT_URI}&scope=${SCOPES}`;
+    //     window.location.href = authURL;
+    // };
+
+
+    var audio = new Audio("Sounds/boostup sound.mp3");
+    audio.play();
     document.querySelector(".left_panel").style.opacity = "1";
     document.querySelector(".right_panel").style.opacity = "1";
     document.querySelector(".left_panel").style.left = "0";
@@ -301,14 +301,16 @@ window.onload = function () {
         document.querySelector(".container").style.boxShadow = "0 0 5dvw .5dvw #7bacd4";
         sleep(500).then(() => {
             document.querySelector(".right_txt").style.animationPlayState = "running";
+            //   sleep(100).then(() => {
+            //     var responses = JSON.parse(document.querySelector(".temp2").innerHTML);
+            //     speak(responses["greetings"][Math.floor(Math.random() * responses["greetings"].length)]);
+            //     document.querySelector(".voice_audio").play();
+            //     document.querySelector(".voice_audio").onended = () => {
+            recognition.start();
+            //     };
+            var responses = JSON.parse(document.querySelector(".temp2").innerHTML);
+            console.log(responses["greetings"][Math.floor(Math.random() * responses["greetings"].length)]);
+            //   });
         })
     })
-
-    sleep(100).then(() => {
-        recognition.start();
-        // if (window.confirm('Ok to Connect to Spotify, Cancel to Skip')) {
-        //     const authURL = `https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=token&redirect_uri=${REDIRECT_URI}&scope=${SCOPES}`;
-        //     window.location.href = authURL;
-        // };
-    });
 };
